@@ -1,42 +1,48 @@
-# LaunchPad - Internship & Career Tracker
+# LaunchPad - Student Internship & Career Tracker
 
-LaunchPad is a web application built with React, Redux Toolkit, and Supabase to help students track their internship applications and learning progress in one place. 
+LaunchPad is a full-stack web application built to help college students manage their internship search. Instead of using confusing spreadsheets or notes, students can visually track applications, get alerted for upcoming deadlines, and log their learning progress in one clean interface.
 
-## Key Features
+The project is built using a React frontend, Redux for state management, and Supabase for database and authentication.
 
-- **Dashboard:** Displays total applications, applications in progress, interviews scheduled, offers received, and rejected applications. It also has charts for status and weekly activity.
-- **Board View:** A drag-and-drop board where you can drag job cards between different stages (Applied, Screening, Interview, Offer, Rejected).
-- **Learning Log:** Track skills you are learning with a progress slider. It also integrates with a test API to simulate cloud saves.
-- **Browse Jobs:** Search and import jobs from an external API (DummyJSON).
-- **Authentication:** Sign up, verify email, and log in securely.
+## Core Features
 
-## Tech Stack
-- React JS (Vite)
-- Redux Toolkit
-- React Router v6
-- Axios
-- Supabase (PostgreSQL & Auth)
-- Custom CSS Modules (No Tailwind or external UI library)
+- **Dashboard:** A central dashboard showing stats like Total Applications, Applications In progress, Interviews scheduled, Offers received, and Rejections. It has simple charts mapping your status distribution and weekly application activity.
+- **Board View:** A drag-and-drop board where you can visually move job applications across different columns (Applied, Screening, Interview, Offer, Rejected) as your status changes.
+- **Learning Log:** A tracker to log skills you are studying (Frontend, Backend, DSA, etc.) using interactive progress sliders. Once progress reaches 100%, the status changes to "Mastered".
+- **Browse Jobs:** Search and import jobs using an external GET API (DummyJSON) with a shimmer loading state.
+- **Real Auth:** Users can register, verify their email via a Supabase confirmation link, and log in securely. All routes are protected.
 
-## How to Setup & Run
+## Technical Details & API Integration
 
-### 1. Install dependencies
+- **Frontend & State:** Developed using React JS (scaffolded with Vite) and React Router v6. Redux Toolkit manages the global state and persists application data to `localStorage` so it is saved even if you close the browser.
+- **API GET:** Fetches mock job listings from the `DummyJSON` API (`https://dummyjson.com/products?limit=6`) using Axios.
+- **API POST:** Fulfills the POST API requirement by sending a real POST request to `JSONPlaceholder` (`https://jsonplaceholder.typicode.com/posts`) when a student adds a new learning skill to the tracker.
+- **Styling:** Custom CSS Modules are used for styling to keep things lightweight, scoped, and clean. No Tailwind or third-party UI libraries were used.
+
+## Setup Instructions
+
+### 1. Install Dependencies
 ```bash
 npm install
 ```
 
-### 2. Configure Environment Variables
-Create a `.env` file in the root folder and add your Supabase credentials:
+### 2. Configure Environment variables
+Create a `.env` file in the root of the project and add your Supabase credentials:
 ```env
 VITE_SUPABASE_URL=https://your-project-ref.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-### 3. Setup Database Tables in Supabase
-Go to the SQL Editor in your Supabase dashboard and run the SQL query located in the `schema.sql` file at the root of this repository. This will create the necessary tables, security policies, and user trigger functions.
+### 3. Setup Database Tables
+Go to your Supabase project dashboard, open the **SQL Editor**, and run the SQL code inside the `schema.sql` file located in the root of this project. This will create the `profiles` and `internships` tables, triggers, and RLS policies.
 
-### 4. Run the development server
+### 4. Run the App
 ```bash
 npm run dev
 ```
-Open `http://localhost:5173/` in your browser.
+
+## Challenges & Key Learnings
+
+- **Brave Browser Shields Blocking Requests:** During development, API requests to Supabase kept throwing a generic `Failed to fetch` error. I found out that Brave Browser's built-in Shields block requests to Supabase domains. Disabling shields or using Chrome resolved the issue.
+- **Vite Cache:** When updating `.env` keys, Vite does not reload them automatically. The local dev server needs to be stopped and restarted (`npm run dev`) to clear the bundler's environment cache.
+- **Optimistic UI Updates:** To make the Board view drag-and-drop feel instant, we update the card state in Redux immediately (optimistic update) and run the Supabase update query in the background. If the database call fails, the store catches the error, rolls back the card, and displays a toast error.
