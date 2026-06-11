@@ -8,6 +8,23 @@ LaunchPad is a full-stack web application built to help college students manage 
 
 The project is built using a React frontend, Redux for state management, and Supabase for database and authentication.
 
+## 📸 Screenshots
+
+### 🔑 Authentication / Login Page
+![Login Page](./screenshots/login.png)
+
+### 📊 Dashboard Overview
+![Dashboard Page](./screenshots/dashboard.png)
+
+### 📋 Internship Tracker (List View)
+![Internships List](./screenshots/internships_list.png)
+
+### 🗂️ Internship Board (Kanban View)
+![Internships Board](./screenshots/internships_board.png)
+
+### 🔍 Browse Jobs Modal (External API Integration)
+![Browse Jobs Modal](./screenshots/browse_jobs.png)
+
 ## Core Features
 
 - **Dashboard:** A central dashboard showing stats like Total Applications, Applications In progress, Interviews scheduled, Offers received, and Rejections. It has simple charts mapping your status distribution and weekly application activity.
