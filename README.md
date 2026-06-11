@@ -62,8 +62,3 @@ Go to your Supabase project dashboard, open the **SQL Editor**, and run the SQL 
 npm run dev
 ```
 
-## Challenges & Key Learnings
-
-- **Brave Browser Shields Blocking Requests:** During development, API requests to Supabase kept throwing a generic `Failed to fetch` error. I found out that Brave Browser's built-in Shields block requests to Supabase domains. Disabling shields or using Chrome resolved the issue.
-- **Vite Cache:** When updating `.env` keys, Vite does not reload them automatically. The local dev server needs to be stopped and restarted (`npm run dev`) to clear the bundler's environment cache.
-- **Optimistic UI Updates:** To make the Board view drag-and-drop feel instant, we update the card state in Redux immediately (optimistic update) and run the Supabase update query in the background. If the database call fails, the store catches the error, rolls back the card, and displays a toast error.
