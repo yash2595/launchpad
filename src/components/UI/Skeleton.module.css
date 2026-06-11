@@ -1,0 +1,16 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #E2E8F0 25%,
+    #F1F5F9 37%,
+    #E2E8F0 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1400ms infinite linear;
+  border-radius: 4px;
+  display: block;
+}
+
+.skeleton--circle {
+  border-radius: 50%;
+}

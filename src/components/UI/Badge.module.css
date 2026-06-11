@@ -1,0 +1,64 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.badge__count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0 4px;
+  border-radius: 9999px;
+  margin-left: 4px;
+}
+
+/* Priority Badges */
+.badge--priority-high {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--color-danger);
+}
+
+.badge--priority-medium {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning);
+}
+
+.badge--priority-low {
+  background-color: rgba(107, 114, 128, 0.12);
+  color: var(--text-secondary);
+}
+
+/* Status Badges */
+.badge--status-applied {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: var(--color-info);
+}
+
+.badge--status-screening {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning);
+}
+
+.badge--status-interview {
+  background-color: rgba(99, 102, 241, 0.12);
+  color: var(--color-accent);
+}
+
+.badge--status-offer {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+}
+
+.badge--status-rejected {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--color-danger);
+}

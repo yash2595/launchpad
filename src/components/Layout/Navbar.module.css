@@ -1,0 +1,134 @@
+.navbar {
+  height: 64px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid #E4E7EF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 220px;
+  z-index: 90;
+  transition: left 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar__menu_btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 150ms ease;
+}
+
+.navbar__menu_btn:hover {
+  background-color: #F1F5F9;
+}
+
+.navbar__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar__username {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Bottom Nav bar for mobile (< 768px) */
+.bottom_nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 56px;
+  background-color: #0E1117;
+  border-top: 1px solid #1E293B;
+  z-index: 99;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.bottom_nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  font-size: 10px;
+  font-weight: 500;
+  gap: 2px;
+  flex: 1;
+  height: 100%;
+}
+
+.bottom_nav__link:active {
+  transform: scale(0.95);
+}
+
+.bottom_nav__link--active {
+  color: var(--color-accent);
+}
+
+/* Tablet Breakpoint (768px - 1279px) */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .navbar {
+    left: 56px;
+  }
+}
+
+/* Mobile Breakpoint (< 768px) */
+@media (max-width: 767px) {
+  .navbar {
+    left: 0;
+    padding: 0 16px;
+  }
+
+  .navbar__menu_btn {
+    display: flex;
+  }
+
+  .navbar__username {
+    display: none;
+  }
+
+  .bottom_nav {
+    display: flex;
+  }
+}
