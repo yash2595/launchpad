@@ -1,7 +1,7 @@
 # 🚀 LaunchPad — Student Internship & Career Tracker
 
 ### 🔗 Project Links
-- **GitHub Repository:** `https://github.com/<your-username>/launchpad`
+- **GitHub Repository:** `https://github.com/yash2595/launchpad`
 - **Live Deployment:** `https://launchpad-tracker.vercel.app` *(or Netlify Link)*
 - **Demo Screen Recording:** `https://loom.com/share/<your-video-id>` *(or YouTube link)*
 
