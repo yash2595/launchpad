@@ -1,5 +1,9 @@
 # LaunchPad - Student Internship & Career Tracker
 
+### 🔗 Project Links
+- **GitHub Repository:** https://github.com/yash2595/launchpad
+- **Live Deployment:** https://launchpad-five-black.vercel.app
+
 LaunchPad is a full-stack web application built to help college students manage their internship search. Instead of using confusing spreadsheets or notes, students can visually track applications, get alerted for upcoming deadlines, and log their learning progress in one clean interface.
 
 The project is built using a React frontend, Redux for state management, and Supabase for database and authentication.
